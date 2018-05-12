@@ -74,7 +74,7 @@ void worldManager::wallCast(SDL_Renderer *renderer, double Px, double Py, double
 	tanAngle = sinAngle / cosAngle;
 
 	//Find first point of horizontal intersection at current ray angle
-	Hy = (sinAngle < 0) ? floor(Py / RES) * RES + RES : floor(Py / RES) * RES - 0.001;
+	Hy = (-sinAngle < 0) ? floor(Py / RES) * RES - 0.001 : floor(Py / RES) * RES + RES;
 	Hx = Px + (Py - Hy) / tanAngle;
 
 	//Find first point of vertical intersection at current ray angle
